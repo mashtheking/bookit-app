@@ -3,9 +3,9 @@ import { Client, Databases, Account, Storage } from 'node-appwrite';
 // Admin Client
 const createAdminClient = async () => {
   const client = new Client()
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT)
-    .setKey(process.env.NEXT_APPWRITE_KEY);
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('66d1fb98002780ced7f2')
+    .setKey('nope');
 
   return {
     get account() {
@@ -22,8 +22,8 @@ const createAdminClient = async () => {
 
 const createSessionClient = async (session) => {
   const client = new Client()
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT);
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('66d1fb98002780ced7f2');
 
   if (session) {
     client.setSession(session);
